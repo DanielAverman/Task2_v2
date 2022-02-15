@@ -4,33 +4,33 @@ import java.util.Scanner;
 
 public class SolverInput {
 
-    public int getConsoleIntValue() {
+    public int getConsoleIntValue(String message) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter integer: ");
+        System.out.println(message);
 
         while(!scanner.hasNextInt()) {
-            System.out.println("Enter integer: ");
+            System.out.println(message);
             scanner.next();
         }
 
         return scanner.nextInt();
     }
 
-    public double getConsoleDoubleValue() {
+    public double getConsoleDoubleValue(String message) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter double: ");
+        System.out.println(message);
 
         while(!scanner.hasNextDouble()) {
-            System.out.println("Enter double: ");
+            System.out.println(message);
             scanner.next();
         }
 
         return scanner.nextDouble();
     }
 
-    public int getConsoleEvenIntValue() {
+    public int getConsoleEvenIntValue(String message) {
         int result;
-        for(result = getConsoleIntValue(); result % 2 != 0; result = getConsoleIntValue()) {
+        for(result = getConsoleIntValue(message); result % 2 != 0; result = getConsoleIntValue(message)) {
             System.out.println("The integer has to be even");
         }
 
